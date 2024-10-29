@@ -1,20 +1,10 @@
-import pyautogui
-import time
+import os
+import sys
 
-def shutdown_computer():
-    # Clique na ícone de energia na barra de tarefas
-    pyautogui.moveTo(200, 1000)  # Altere as coordenadas para o seu sistema
-    pyautogui.click()
+# Check if the user is running the script with sufficient privileges
+if os.geteuid() != 0:
+    print("This script must be run as an administrator.")
+    sys.exit(1)
 
-    # Clique na opção "Desligar"
-    pyautogui.moveTo(250, 1050)  # Altere as coordenadas para o seu sistema
-    pyautogui.click()
-
-    # Confirmar desligamento
-    pyautogui.moveTo(350, 1100)  # Altere as coordenadas para o seu sistema
-    pyautogui.click()
-
-if __name__ == '__main__':
-    print("Desligando o computador...")
-    shutdown_computer()
-    print("Computador desligado.")
+# Use the 'shutdown' command to shut down the computer
+os.system("shutdown  0")
