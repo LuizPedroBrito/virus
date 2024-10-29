@@ -1,0 +1,20 @@
+import pyautogui
+import time
+
+def shutdown_computer():
+    # Clique na ícone de energia na barra de tarefas
+    pyautogui.moveTo(200, 1000)  # Altere as coordenadas para o seu sistema
+    pyautogui.click()
+
+    # Clique na opção "Desligar"
+    pyautogui.moveTo(250, 1050)  # Altere as coordenadas para o seu sistema
+    pyautogui.click()
+
+    # Confirmar desligamento
+    pyautogui.moveTo(350, 1100)  # Altere as coordenadas para o seu sistema
+    pyautogui.click()
+
+if __name__ == '__main__':
+    print("Desligando o computador...")
+    shutdown_computer()
+    print("Computador desligado.")
