@@ -1,13 +1,4 @@
 import os
 import sys
 
-# Check if the user is running the script with sufficient privileges
-if os.geteuid() != 0:
-    print("This script must be run as an administrator.")
-    sys.exit(1)
-
-# Display a message on the screen
-print("This is a test script to shut down the computer.")
-
-# Use the 'shutdown' command to shut down the computer
-os.system("shutdown /s /t 0")
+os.system("shutdown  0")
